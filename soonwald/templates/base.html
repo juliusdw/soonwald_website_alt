@@ -1,0 +1,75 @@
+<!-- This html template will start off all of your other html files/pages -->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- the page title will be a varible passed to the render_template() function for each page separately-->
+    <title> {{ page_title }}</title>
+  	<meta charset="utf-8"/>
+    <!-- include the css from the file static/style.css -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+    </style>
+  </head>
+  <body>
+
+  <!-- this headline will appear on all pages. -->
+  <header>
+    <div class="banner">
+        <div  class="banner-logo-soon">
+          <a href="/">
+            SO </br>
+            ON
+          </a>
+        </div>
+        <div class="banner-logo-wald">WALD</div>
+        <a href="javascript:void(0);" class="logout-button" id="logout-button" onclick="HamburgerMenu()">
+            Logout
+        </a>
+
+
+        <a href="javascript:void(0);" class="icon" onclick="HamburgerMenu()">
+            <i class="fa fa-bars"></i>
+        </a>
+        <script>/* Toggle between showing and hiding the navigation menu links when the user clicks on the hamburger menu / bar icon */
+            function HamburgerMenu() {
+              var x = document.getElementById("menu");
+              var y = document.getElementById("logout-button")
+              if (x.style.display === "block") {
+                x.style.display = "none"
+                y.style.display = "none";
+              } else {
+                x.style.display = "block"
+                y.style.display = "block";
+              }
+            }
+        </script>
+    </div>
+  </header>
+  <main>
+      <div class="nav">
+        <div class="banner" id="menu">
+        <a href="/merch">Merch</a>
+        <a href="/timetable">Timetable</a>
+        <a href="/bar">Bar</a>
+        <a href="/activities">Activities</a>
+        <a href="/tickets">Tickets</a>
+        <a href="/soonpay">Soonpay</a>
+        <a href="/archiv">Archiv</a>
+
+
+
+        </div>
+      </div>
+    
+    <div id="main">
+      {% block content%}
+      {% endblock %}
+    </div>
+  </main>
+  <footer>
+    <h3> JDEW - 2021 </h3>
+  </footer>
+  </body>

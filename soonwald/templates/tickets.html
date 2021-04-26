@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <div class="title_box"> 
+        <div>Tickets
+        </div>
+    </div>  
+    <div class="box1"> 
+        <div class="box1-title">
+            Wann? Wie? Wo? Was?
+        </div>
+        <div class="box1-content">
+            Ihr könnt hier ein Ticket kaufen, das hilft uns 
+            etwas die Kosten zu decken. Der Presale geht noch bis zum XXX
+        </div>
+    </div>    
+    <div class="box2"> 
+        <div class="box2-title">
+            Preise
+        </div>
+        <div class="box2-content">
+            TBA
+        </div>
+    </div> 
+    <div class="box1"> 
+        <div class="box1-title">
+            Tickets kaufen
+        </div>
+        <div class="box1-content">
+
+            <form class="ticket-shop">
+                <input type="text" id="name" name="name" placeholder="name"><br>
+                <input type="text" id="email" name="email" placeholder="email"><br>
+                <select name="arival-date">
+                <option value="Wann wirst du ankommen" >Wann wirst du ankommen?</option>
+                <option value="Donnerstag">Donnerstag</option>
+                <option value="Freitag">Freitag</option>
+                <option value="Samstag">Samstag</option>
+                <option value="down-know">Ich weis es noch nicht</option>
+                </select>
+                <input type="checkbox" id="confirmation" name="confirmation" value="confirmation">
+                <label for="confirmation">I confirm stuff</label><br>
+
+                <button type="button" onclick="alert('Hello World!')">Abschicken</button>
+
+            </form>
+
+        </div>
+    </div>   
+    
+{% endblock %}
