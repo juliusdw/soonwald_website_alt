@@ -1,5 +1,13 @@
-from sample_website.website import hello_world
+from soonwald.website import app
 
 
-def test_sample_website():
-    assert hello_world() == '<h1>Hello, Class!</h1>'
+def ttest_index():
+    with app.test_client() as test_client:
+        # mimic a browser: 'GET /', as if you visit the site
+        response = test_client.get('/')
+
+        # check that the HTTP response is a success
+        assert response.status_code == 200
+        html_content = response.data.decode()
+
+        assert "<html>" in html_content
