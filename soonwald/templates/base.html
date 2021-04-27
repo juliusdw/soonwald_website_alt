@@ -12,6 +12,11 @@
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
     </style>
+    <script src="https://cdn.jsdelivr.net/gh/dixonandmoe/rellax@master/rellax.min.js"></script>
+
+
+
+
   </head>
   <body>
 
@@ -65,6 +70,31 @@
       </div>
     
     <div id="main">
+      <div class="background" id="background">
+<!--         <div class="background-small-circle-1 rellax" data-rellax-speed="20">
+        </div>
+        <div class="background-small-circle-2 rellax" data-rellax-speed="6">
+        </div>
+        <div class="background-small-circle-3 rellax" data-rellax-speed="8">
+        </div>
+        <div class="background-small-circle-4 rellax" data-rellax-speed="8">
+        </div> -->
+        <!-- <div class="background-circle-1 background-circle">
+        </div>
+        <div class="background-circle-2 background-circle">
+        </div>
+        <div class="background-circle-3 background-circle">
+        </div> -->
+        <script type="text/javascript" src="{{ url_for('static', filename='script.js') }}"></script>
+        <script>
+          var rellax = new Rellax('.rellax');
+        </script>
+
+      
+
+
+    
+      </div>
       {% block content%}
       {% endblock %}
     </div>
